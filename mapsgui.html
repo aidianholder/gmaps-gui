@@ -1,0 +1,122 @@
+   <!DOCTYPE html>    
+   <html>    
+   <head>    
+   <style type="text/css">    
+   
+   </style>    
+   
+   <title>maps so simple even an anchor can do it</title>    
+   
+   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script> 
+   <script type="text/javascript" src="mapsgui.js"></script>
+   <link rel="stylesheet" type="text/css" href="mapsgui.css" />
+   </head>    
+   
+   <body onload="init()">    
+   <div id="container">        
+   <div id="map_container">    
+		<div id="locate">
+			<input type="text" name="address" id="address" />
+			<button type="button" onclick="geocode()">Find Location</button>
+		</div>    
+        <!--can change size easy, may screw up layout-->
+		<div id="map_div" style="width:295px;height:295px;"></div>    
+		<div id="takeSnapshot" style="margin-left:10px;margin-top:20px;margin-bottom:20px;font-weight:bold;font-size:x-large;width:300px;float:left;">
+			<div style="width:164px;margin-left:auto;margin-right:auto;">
+				<img src="icons/make_map.png" style="margin:auto;" onclick="captureSnapshot()">
+			</div>
+		</div>        
+	</div>   
+	<div id="makeMarkers">        
+		<div id="markerDetails">    
+			<img src='icons/red-dot.png' id="1" onclick="activateMarkers(1)">    
+			<img src='icons/yellow-dot.png' id="2" onclick="activateMarkers(2)">        
+			<img src='icons/purple-dot.png'id="3" onclick="activateMarkers(3)">    
+			<img src='icons/pink-dot.png' id="4" onclick="activateMarkers(4)">    
+			<img src='icons/green-dot.png' id="5" onclick="activateMarkers(5)">
+			<img src='icons/blue-dot.png' id="6" onclick="activateMarkers(6)">
+			<img src='icons/ltblue-dot.png' id="7" onclick="activateMarkers(7)">
+			<img src='icons/aircraft-small.png' id="8" onclick="activateMarkers(8)">
+			<img src='icons/airport.png' id="9" onclick="activateMarkers(9)">
+			<img src='icons/bank.png' id="10" onclick="activateMarkers(10)">
+			<img src='icons/bulldozer.png' id="11" onclick="activateMarkers(11)">
+			<img src='icons/car.png' id="12" onclick="activateMarkers(12)">
+			<img src='icons/casino.png' id="13" onclick="activateMarkers(13)">
+			<img src='icons/cemetary.png' id="14" onclick="activateMarkers(14)">
+			<img src='icons/church2.png' id="15" onclick="activateMarkers(15)">
+			<img src='icons/cinema.png' id="16" onclick="activateMarkers(16)">
+			<img src='icons/construction.png' id="17" onclick="activateMarkers(17)">
+			<img src='icons/court.png' id="18" onclick="activateMarkers(18)">
+			<img src='icons/crimescene.png' id="19" onclick="activateMarkers(19)">
+			<img src='icons/explosion.png' id="20" onclick="activateMarkers(20)">
+			<img src='icons/factory.png' id="21" onclick="activateMarkers(21)">
+			<img src='icons/fire.png' id="22" onclick="activateMarkers(22)">
+			<img src='icons/fireworks.png' id="23" onclick="activateMarkers(23)">
+			<img src='icons/flood.png' id="24" onclick="activateMarkers(24)">
+			<img src='icons/gazstation.png' id="25" onclick="activateMarkers(25)">
+			<img src='icons/gun.png' id="26" onclick="activateMarkers(26)">
+			<img src='icons/home.png' id="27" onclick="activateMarkers(27)">
+			<img src='icons/laboratory.png' id="28" onclick="activateMarkers(28)">
+			<img src='icons/menatwork.png' id="29" onclick="activateMarkers(29)">
+			<img src='icons/mosque.png' id="30" onclick="activateMarkers(30)">
+			<img src='icons/museum.png' id="31" onclick="activateMarkers(31)">
+			<img src='icons/music-classical.png' id="32" onclick="activateMarkers(32)">
+			<img src='icons/parking.png' id="33" onclick="activateMarkers(33)">
+			<img src='icons/police2.png' id="34" onclick="activateMarkers(34)">
+			<img src='icons/powerlinesdown.png' id="35" onclick="activateMarkers(35)">
+			<img src='icons/poweroutage.png' id="36" onclick="activateMarkers(36)">
+			<img src='icons/rain.png' id="37" onclick="activateMarkers(37)">
+			<img src='icons/snow.png' id="38" onclick="activateMarkers(38)">
+			<img src='icons/stoplight.png' id="39" onclick="activateMarkers(39)">
+			<img src='icons/synagogue.png' id="40" onclick="activateMarkers(40)">
+			<img src='icons/tools.png' id="41" onclick="activateMarkers(41)">
+			<img src='icons/thunder.png' id="42" onclick="activateMarkers(42)">
+			<img src='icons/train.png' id="43" onclick="activateMarkers(43)">
+			<img src='icons/treedown.png' id="44" onclick="activateMarkers(44)">
+			<img src='icons/workoffice.png' id="45" onclick="activateMarkers(45)">
+			<img src='icons/accident.png' id="46" onclick="activateMarkers(46)">
+			<img src='icons/accident2.png' id="47" onclick="activateMarkers(47)">
+			<img src='icons/zoo.png' id="48" onclick="activateMarkers(48)">
+			<img src='icons/bowling.png' id="49" onclick="activateMarkers(49)">
+			<img src='icons/closedroad.png' id="50" onclick="activateMarkers(50)">
+			<img src='icons/curvyroad.png' id="51" onclick="activateMarkers(51)">
+			<img src='icons/daycare.png' id="52" onclick="activateMarkers(52)">
+			<img src='icons/doctor.png' id="53" onclick="activateMarkers(53)">
+			<img src='icons/drugs.png' id="54" onclick="activateMarkers(54)">
+			<img src='icons/fallingrocks.png' id="55" onclick="activateMarkers(55)">
+			<img src='icons/fishingshop.png' id="56" onclick="activateMarkers(56)">
+			<img src='icons/gifts.png' id="57" onclick="activateMarkers(57)">
+			<img src='icons/hospital.png' id="58" onclick="activateMarkers(58)">
+			<img src='icons/hotel.png' id="59" onclick="activateMarkers(59)">
+			<img src='icons/icyroad.png' id="60" onclick="activateMarkers(60)">
+			<img src='icons/lock.png' id="61" onclick="activateMarkers(61)">
+			<img src='icons/market-farm.png' id="62" onclick="activateMarkers(62)">
+			<img src='icons/pets.png' id="63" onclick="activateMarkers(63)">
+			<img src='icons/playground.png' id="64" onclick="activateMarkers(64)">
+			<img src='icons/postal.png' id="65" onclick="activateMarkers(65)">        
+			<img src='icons/powerlinepole.png' id="66" onclick="activateMarkers(66)">    
+			<img src='icons/restaurant.png' id="67" onclick="activateMarkers(67)">
+			<img src='icons/school.png' id="68" onclick="activateMarkers(68)">    
+			<img src='icons/supermarket.png' id="69" onclick="activateMarkers(69)">    
+			<img src='icons/thefth.png' id="70" onclick="activateMarkers(70)">        
+		</div>    
+		<div id="currentIconDiv">    
+			<div style="padding-left:10px;padding-right:10px;margin-top:5px;float:left;">
+			<span>Current Marker:</span>
+			<br>
+				<img id="currentIcon" src="http://aidianholder.net/images/mapicons/blank.png">        
+			</div>    
+			<div style="padding-top:10px;">
+				<input type="checkbox" id="popupSelect" value="popupYes" />
+					<span>InfoWindow:</span>
+						<br/>
+				<input type="textarea" id="popupInfo" style="margin-bottom:10px;" />
+			</div>    
+		</div>    
+		<button onclick="clearMarkers()">Clear Marker Settings</button>    
+		<button onclick="deleteMarkers()">Delete Markers</button>        
+	</div>            
+	<div id="outputDiv" style="width:640px; float:left;"></div>    
+	</div>    
+</body>    
+</html>                         

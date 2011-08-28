@@ -1,0 +1,13 @@
+
+html { height: 100% }    
+body { height: 100%; margin: 0px; padding: 0px; background-color:#000000; }    
+h5 {display:inline;}    
+
+#container {font-family:Arial,Helvetica,Sans-Serif;color:#CCC}    
+#map_container {float:left;height:500px;margin-top:10px;}    
+#map_div {padding:20px; margin-right:10px; margin-bottom:10px;}    
+#locate {margin-top:10px; margin-bottom:20px;}    
+#makeMarkers {text-align:center;margin-left:350px;margin-bottom:15px;padding:5px;width:300px;font-weight:bold; font-size:small;}    
+#markerDetails {text-align:center;margin:5px;padding:5px}    
+#currentIconDiv {margin-bottom:10px;height:70px;}    
+#outputDiv {padding: 5px; margin-left:10px; border-top: 1px solid #666;}        
